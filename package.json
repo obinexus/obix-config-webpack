@@ -1,0 +1,90 @@
+{
+  "name": "obix-config-webpack",
+  "version": "0.5.0",
+  "description": "OBIX Webpack bundler configuration for OBIX CLI and SDK packages",
+  "license": "MIT",
+  "author": "Nnamdi Michael Okpala <okpalan@protonmail.com>",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./base": "./webpack.config.js",
+    "./development": "./development/webpack.config.js",
+    "./production": "./production/webpack.config.js",
+    "./plugins": "./plugins/index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "LICENSE",
+    "webpack.config.js",
+    "development",
+    "production",
+    "plugins",
+    "test",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --test \"test/*.test.mjs\""
+  },
+  "dependencies": {
+    "terser-webpack-plugin": "^5.3.0"
+  },
+  "peerDependencies": {
+    "ts-loader": ">=9.0.0",
+    "webpack": ">=5.0.0",
+    "webpack-cli": ">=5.0.0"
+  },
+  "peerDependenciesMeta": {
+    "webpack-bundle-analyzer": {
+      "optional": true
+    },
+    "copy-webpack-plugin": {
+      "optional": true
+    },
+    "html-webpack-plugin": {
+      "optional": true
+    },
+    "mini-css-extract-plugin": {
+      "optional": true
+    },
+    "ts-loader": {
+      "optional": true
+    },
+    "webpack": {
+      "optional": true
+    },
+    "webpack-cli": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "webpack": "^5.0.0"
+  },
+  "keywords": [
+    "obix"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/obinexus/obix-config-webpack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/obinexus/obix-config-webpack/issues"
+  },
+  "homepage": "https://github.com/obinexus/obix-config-webpack#readme"
+}
